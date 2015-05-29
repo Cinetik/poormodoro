@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x
 
 function black_list {
   if test -f black_list.txt; then
