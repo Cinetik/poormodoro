@@ -26,7 +26,7 @@ function clear_black_list {
 function pomodoro {
   sequence_number=1
   sequence_total=4
-  while [ $sequence_number -lt $sequence_total ]; do
+  while [ $sequence_number -le $sequence_total ]; do
       echo "blacklist starts for 60 secs"
       black_list
       echo "start working"
@@ -35,7 +35,7 @@ function pomodoro {
       clear_black_list
       echo "pause starts"
       sleep 15
-      $sequence_number=$sequence_number+1
+      let sequence_number=$sequence_number+1
   done
 }
 if [[ $(id -u) -ne 0 ]]; then
