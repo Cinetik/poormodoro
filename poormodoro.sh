@@ -1,4 +1,6 @@
 #!/bin/bash
+# Author: dupp (emdupp@gmail.com)
+# Description: Poor man's script to help reduce Internet related distractions while using the time management technique created by Francesco Cirillo
 
 function black_list {
   if test -f black_list.txt; then
