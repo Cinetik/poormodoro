@@ -27,6 +27,7 @@ function pomodoro {
   sequence_number=1
   sequence_total=4
   work_interval=60
+  small_pause=5
   pause_interval=15
   while [ $sequence_number -le $sequence_total ]; do
       /usr/bin/osascript -e 'display notification "Black list starts now!" with title "poormodoro"'
@@ -34,7 +35,12 @@ function pomodoro {
       sleep $work_interval
       /usr/bin/osascript -e 'display notification "Black list clears now!" with title "poormodoro"'
       clear_black_list
-      sleep $pause_interval
+      if [ $sequence_number -eq $sequence_total ]; then
+	sleep $pause_interval
+      else
+	sleep $small_pause
+      fi
+
       let sequence_number=$sequence_number+1
   done
 }
